@@ -39,6 +39,16 @@ class ResetPasswordController extends Controller
         $this->middleware('guest');
     }
 
+    //重写 ResetsPasswords (trait类) 中的 rules 方法，使密码最小长度为 6
+    protected function rules()
+    {
+        return [
+            'token' => 'required',
+            'email' => 'required|email',
+            'password' => 'required|min:6',
+        ];
+    }
+
     public function sendResetResponse(Request $request, $response)
     {
         session()->flash('success', '密码更新成功，您已成功登陆！');
