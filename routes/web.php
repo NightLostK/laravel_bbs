@@ -37,7 +37,7 @@ Route::get('email/verify/{id}/{hash}', 'Auth\VerificationController@verify')->na
 Route::post('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
 
 //用户资源相关路由
-//Route::resource('users', 'UsersController', ['only' => ['show', 'update', 'edit']]);
-Route::get('/users/{user}', 'UsersController@show')->name('users.show');
-Route::get('/users/{user}/edit', 'UsersController@edit')->name('users.edit');
-Route::patch('/users/{user}', 'UsersController@update')->name('users.update');
+Route::resource('users', 'UsersController', ['only' => ['show', 'update', 'edit']]);
+//Route::get('/users/{user}', 'UsersController@show')->name('users.show');
+//Route::get('/users/{user}/edit', 'UsersController@edit')->name('users.edit');
+//Route::patch('/users/{user}', 'UsersController@update')->name('users.update');
