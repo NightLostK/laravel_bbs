@@ -31,6 +31,7 @@ class AppServiceProvider extends ServiceProvider
         Schema::defaultStringLength(191);
         
         Topic::observe(TopicObserver::class);
+        \App\Models\Reply::observe(\App\Observers\ReplyObserver::class);
 
         //log 日志中 记录执行的 SQL 语句
         \DB::listen(function ($query) {
