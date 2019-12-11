@@ -41,7 +41,7 @@ class TopicReplied extends Notification
         $topic = $this->reply->topic;
         $link = $topic->link(['#reply' . $this->reply->id]);
 
-        // 存入数据库里的数据
+        // 存入数据库里的数据(notifications 中的 data 字段)
         return [
             'reply_id' => $this->reply->id,
             'reply_content' => $this->reply->content,
