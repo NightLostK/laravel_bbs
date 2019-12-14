@@ -33,6 +33,7 @@ class TopicReplied extends Notification implements ShouldQueue
      */
     public function via($notifiable)
     {
+        echo 32332;die;
         return ['database', 'mail'];
     }
 
