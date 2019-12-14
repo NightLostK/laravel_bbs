@@ -17,7 +17,7 @@ class ReplyObserver
 
         $reply->topic->reply_count = $reply->topic->replies->count();
         $reply->topic->save();
-
+        echo 23233;die;
         // 通知话题作者有新的评论
         $reply->topic->user->notify(new TopicReplied($reply));
     }
